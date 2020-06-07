@@ -35,8 +35,6 @@ def find_trendlines(dataframe,
     if what == RESISTS:
         peaks = find_peaks(dataframe, clearance=clearance, method=MODERN, what=TOPS)
 
-    print(peaks)
-
     for i in range(0, len(peaks)):
         for j in range(0, len(peaks)):
             if j <= i:
