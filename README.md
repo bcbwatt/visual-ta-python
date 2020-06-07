@@ -4,6 +4,7 @@
 
 ![Image of module output](https://proficientcoder.com/download/visual-ta-cpp-demo-2.png)
 
+```
 import cv2  
 import yfinance as yf 
 
@@ -49,3 +50,4 @@ def main():
 	# Show the finished graph  
 	cv2.imshow('Technical analysis', graph.canvas)  
 	cv2.waitKey(0)
+```
