@@ -1,4 +1,4 @@
-# Technical analysis with python
+# Visual technical analysis with python
 
 ![Image of module output](https://proficientcoder.com/download/visual-ta-cpp-demo-1.png)
 
