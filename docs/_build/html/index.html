@@ -1,0 +1,133 @@
+<div class="section" id="module-pythonta.technical">
+<span id="welcome-to-pythonta-s-documentation"></span>
+<dl class="py function">
+<dt id="pythonta.technical.find_peaks">
+<code class="sig-prename descclassname">pythonta.technical.</code><code class="sig-name descname">find_peaks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span></em>, <em class="sig-param"><span class="n">clearance</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">what</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pythonta.technical.find_peaks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates peaks for the given dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe</strong> (<em>pandas</em>) – Dataframe containing the price data.</p></li>
+<li><p><strong>clearance</strong> (<em>int</em>) – Nr of candles to clear on both sides of the peak</p></li>
+<li><p><strong>method</strong> – User CLASSIC or MODERN style for peak detection</p></li>
+<li><p><strong>what</strong> (<em>const</em>) – Selects whether TOPS or BOTTOMS will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>indexes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dataframe must contain the columns ‘High’ and ‘Low’.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CLASSIC peak stick out on a horizontal level. MODERN peaks also consider the trend of surrounding candles.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pythonta.technical.find_regression_line">
+<code class="sig-prename descclassname">pythonta.technical.</code><code class="sig-name descname">find_regression_line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pythonta.technical.find_regression_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a regression line for the given dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataframe</strong> (<em>pandas</em>) – Dataframe containing the price data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>line</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(x1, y1, x2, y2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pythonta.technical.find_support_and_ressitance">
+<code class="sig-prename descclassname">pythonta.technical.</code><code class="sig-name descname">find_support_and_ressitance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span></em>, <em class="sig-param"><span class="n">clearance</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">what</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pythonta.technical.find_support_and_ressitance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates support or resistance levels for the given dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe</strong> (<em>pandas</em>) – Dataframe containing the price data.</p></li>
+<li><p><strong>clearance</strong> (<em>int</em>) – Nr of candles to clear on both sides of the peak</p></li>
+<li><p><strong>what</strong> (<em>const</em>) – Selects whether SUPPORTS or RESISTS will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>lines</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dataframe must contain the columns ‘High’ and ‘Low’.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned array of lines are in the format (x1,y1,x2,y2) where x1 and x2 are indexes into the dataframe and Y1 and Y2 are actual price points.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pythonta.technical.find_trendlines">
+<code class="sig-prename descclassname">pythonta.technical.</code><code class="sig-name descname">find_trendlines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span></em>, <em class="sig-param"><span class="n">clearance</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">what</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pythonta.technical.find_trendlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates trendlines for the given dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe</strong> (<em>pandas</em>) – Dataframe containing the price data.</p></li>
+<li><p><strong>clearance</strong> (<em>int</em>) – Nr of candles to clear on both sides of the peak</p></li>
+<li><p><strong>what</strong> (<em>const</em>) – Selects whether SUPPORTS or RESISTS will be returned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>lines</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dataframe must contain the columns ‘High’ and ‘Low’.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The returned array of lines are in the format (x1,y1,x2,y2) where x1 and x2 are indexes into the dataframe and Y1 and Y2 are actual price points.</p>
+</div>
+</dd></dl>
+
+<span class="target" id="module-pythonta.drawing"></span><span class="target" id="module-pythonta.utils"></span><dl class="py function">
+<dt id="pythonta.utils.translate">
+<code class="sig-prename descclassname">pythonta.utils.</code><code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">fromBegin</span></em>, <em class="sig-param"><span class="n">fromEnd</span></em>, <em class="sig-param"><span class="n">toBegin</span></em>, <em class="sig-param"><span class="n">toEnd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pythonta.utils.translate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Translates a point from one system to the other. A system is defined (but</dt><dd><p>not limited) by a begin- and end-value.</p>
+</dd>
+<dt>Parameters:</dt><dd><p>value               : The point to be transformed
+fromBegin, fromEnd  : System in which the value parameter is now
+toBegin, toEnd      : System to which value is to be translated</p>
+</dd>
+<dt>Returns:</dt><dd><p>translated value in the new system</p>
+</dd>
+</dl>
+<p>Notes:
+1. For examele; if you wanted 10 on a scale of 1-10 to be translated to a</p>
+<blockquote>
+<div><dl class="simple">
+<dt>scale of 20-40 you would do:</dt><dd><p>v_new = translate(10, 1, 10, 20, 40)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
